@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
+<title>Práctica 2</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7614 2013-02-21 15:55:51Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="practica-2">
+<h1 class="title">Práctica 2</h1>
+<h2 class="subtitle" id="log-analyzer-system">Log Analyzer System</h2>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr class="field"><th class="docinfo-name">Autor:</th><td class="field-body">Antonio Camas Maestre</td>
+</tr>
+<tr class="field"><th class="docinfo-name">git:</th><td class="field-body"><a class="reference external" href="https://github.com/antoniocamas/log-analyzer-architecture.git">https://github.com/antoniocamas/log-analyzer-architecture.git</a></td>
+</tr>
+</tbody>
+</table>
+<div class="contents topic" id="contenidos">
+<p class="topic-title first">Contenidos</p>
+<ul class="simple">
+<li><a class="reference internal" href="#decision-y-justificacion-de-los-patrones-arquitectonicos" id="id4">Decisión y Justificación de los Patrones Arquitectónicos</a><ul>
+<li><a class="reference internal" href="#subsistema-log-processer" id="id5">Subsistema <em>Log Processer</em></a><ul>
+<li><a class="reference internal" href="#patron-broker" id="id6">Patrón <em>Broker</em></a></li>
+<li><a class="reference internal" href="#patron-layers" id="id7">Patrón <em>Layers</em></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#subsistema-log-analyzer" id="id8">Subsistema <em>Log Analyzer</em></a><ul>
+<li><a class="reference internal" href="#patron-blackboard" id="id9">Patrón <em>Blackboard</em></a></li>
+<li><a class="reference internal" href="#id1" id="id10">Patrón <em>Broker</em></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#estructura-de-la-solucion" id="id11">Estructura de la solución</a><ul>
+<li><a class="reference internal" href="#log-processer" id="id12"><em>Log Processer</em></a><ul>
+<li><a class="reference internal" href="#vista-logica-del-subsistema-log-processer" id="id13">Vista lógica  del subsistema <em>Log Processer</em>.</a></li>
+<li><a class="reference internal" href="#vista-de-despliegue-del-subsistema-log-processer" id="id14">Vista de despliegue del subsistema <em>Log Processer</em>.</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#log-analyzer" id="id15"><em>Log Analyzer</em></a><ul>
+<li><a class="reference internal" href="#vista-logica-del-subsistema-log-analyzer" id="id16">Vista lógica  del subsistema <em>Log Analyzer</em>.</a></li>
+<li><a class="reference internal" href="#vista-de-despliegue-del-subsistema-log-analyzer" id="id17">Vista de despliegue del subsistema <em>Log Analyzer</em>.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#comportamiento-dinamico-de-la-solucion" id="id18">Comportamiento Dinámico de la solución</a><ul>
+<li><a class="reference internal" href="#id2" id="id19"><em>Log Processer</em></a><ul>
+<li><a class="reference internal" href="#vista-de-procesos-del-subsistema-log-processer-sistemas" id="id20">Vista de procesos del subsistema <em>Log Processer</em>. Sistemas</a></li>
+<li><a class="reference internal" href="#vista-de-procesos-del-subsistema-log-processer-aplicaciones" id="id21">Vista de procesos del subsistema <em>Log Processer</em>. Aplicaciones</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id3" id="id22"><em>Log Analyzer</em></a><ul>
+<li><a class="reference internal" href="#vista-de-procesos-del-subsistema-log-analyzer" id="id23">Vista de procesos del subsistema <em>Log Analyzer</em>.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="decision-y-justificacion-de-los-patrones-arquitectonicos">
+<h1><a class="toc-backref" href="#id4">Decisión y Justificación de los Patrones Arquitectónicos</a></h1>
+<p>El sistema está divido en dos subsistemas independientes. La comunicación entre ambos será a través de una base de datos en la que un subsistema volcará los logs procesados y el otro los recuperará para su análisis.</p>
+<div class="section" id="subsistema-log-processer">
+<h2><a class="toc-backref" href="#id5">Subsistema <em>Log Processer</em></a></h2>
+<p>El patrón <em>Broker</em> ordena la estructura general del <em>Log Processer</em>. Sin embargo el servidor que procesa los logs presenta varios módulos con requisitos específicos que nos llevan a combinar el patrón <em>Broker</em> gobernante con el Patrón <em>Layers</em>.</p>
+<div class="section" id="patron-broker">
+<h3><a class="toc-backref" href="#id6">Patrón <em>Broker</em></a></h3>
+<p>El subsistema usa el patrón <em>Broker</em> que está justificado por las siguientes <strong>fuerzas</strong>:</p>
+<ul class="simple">
+<li>El sistema debe ser <strong>elástico</strong> pues debe atender a un numero indefinido de sistemas y aplicaciones generando logs.</li>
+<li>El sistema requiere elasticidad una <strong>arquitectura distribuida</strong> responde bien a esta necesidad.</li>
+<li>El sistema ha de poder crecer, debemos proveer de mecanismos que abstraigan a los clientes de la localización de los servidores.</li>
+</ul>
+<p>El sistema no es ni tan grande ni tan complicado como para empujarnos a un patrón de microservicios. Por tanto el patrón <em>Broker</em> es el adecuado para responder a las necesidades.</p>
+<p>Como <strong>consecuencia</strong> por el uso  del patrón Broker el <em>Log Processer</em> presenta:</p>
+<ul class="simple">
+<li>Transparencia de localización de los <em>logs Receptors</em> (clientes) y de los filtros de logs (servidores).</li>
+<li>Extensibilidad en clientes y servidores.</li>
+<li>Posibilidad de cambiar las implementaciones de sus componentes.</li>
+<li>Portabilidad</li>
+<li>Reusabilidad</li>
+</ul>
+<p>Sin embargo esta decisión presenta algunas <strong>responsabilidades</strong>:</p>
+<ul class="simple">
+<li>Menos eficiente que el monolito.</li>
+<li>Es complicado de probar extremo a extremo.</li>
+<li>Es complicado de depurar de extremo a extremo.</li>
+<li>Aunque en general el patrón Broker complica la gestión de errores. La poca relevancia de perder un dato de entrada hace que en este sistema en particular sea sencillo controlar los errores pues ignorar la linea de log que provoca el fallo es viable.</li>
+</ul>
+</div>
+<div class="section" id="patron-layers">
+<h3><a class="toc-backref" href="#id7">Patrón <em>Layers</em></a></h3>
+<p>A su vez la parte de ofrece servicios de procesado de logs está organizada siguiendo un patrón <em>Layers</em>. Las <strong>fuerzas</strong> que empujan a usar este patrón son:</p>
+<ul class="simple">
+<li>Existe la necesidad de tener flexibilidad en el procesamiento de los logs: eliminar, cambiar o añadir etapas.</li>
+<li>Agrupación de los componentes con responsabilidades similares (parsers y procesadores del testo por ejemplo).</li>
+<li>Descomposición de un componente complejo.</li>
+</ul>
+<p>Las <strong>consecuencias</strong> de usar un patrón <em>Layers</em>:</p>
+<ul class="simple">
+<li>Podría existir una reutilización de capas</li>
+<li>Dependencias locales: un cambio afecta como mucho a las capas adyacentes</li>
+<li>Las interfaces bien definidas dan la posibilidad de cambiar las implementaciones de los componentes.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="subsistema-log-analyzer">
+<h2><a class="toc-backref" href="#id8">Subsistema <em>Log Analyzer</em></a></h2>
+<p>El subsistema <em>Log Analyzer</em> está gobernado por una arquitectura siguiendo el patrón <em>Blackboard</em>.  Sin embargo la organización de los analizadores de logs combina el anterior patrón con el patrón <em>Broker</em> por razones de dimensionamiento, flexibilidad, mantenimiento, etc.</p>
+<div class="section" id="patron-blackboard">
+<h3><a class="toc-backref" href="#id9">Patrón <em>Blackboard</em></a></h3>
+<p>Las <strong>fuerzas</strong> que empujan a usar el patrón <em>Blackboard</em> son:</p>
+<ul class="simple">
+<li>Es necesario usar diferentes algoritmos para el análisis de los logs.</li>
+<li>Es necesario poder añadir, modificar o eliminar herramientas de análisis.</li>
+<li>Hay algoritmos que resuelven parcialmente el problema.</li>
+<li>Hay resultados aproximados involucrados en el análisis.</li>
+</ul>
+<p>Las <strong>consecuencias</strong> pues de este patrón <em>Blackboard</em> son:</p>
+<ul class="simple">
+<li>el subsistema permite usar diferentes analizadores.</li>
+<li>el subsistema se adaptará bien a los cambios en los analizadores.</li>
+<li>el esfuerzo en mantenimiento está acotado.</li>
+<li>los analizadores son reutilizables.</li>
+<li>es tolerante a fallos. Si un analizador falla se ignorará ignorará el resultado de su análisis.</li>
+<li>es robusto.</li>
+</ul>
+<p>Las <strong>responsabilidades</strong>:</p>
+<ul class="simple">
+<li>Dificultad para probar el subsistema completo de extremo a extremo.</li>
+<li>No se pueden garantizar soluciones de calidad.</li>
+<li>Dificultad para diseñar una buena estrategia de control.</li>
+<li>Poca eficiencia.</li>
+<li>Dificultad en la paralelización. Algo que se intentará paliar combinándolo con el patrón <em>Broker</em> como se verá más adelante.</li>
+<li>Alto coste de desarrollo.</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h3><a class="toc-backref" href="#id10">Patrón <em>Broker</em></a></h3>
+<p>Los analizadores del subsistema se disponen siguiendo un patrón <em>Broker</em> debido a las siguientes <strong>fuerzas</strong>:</p>
+<ul class="simple">
+<li>El sistema debe ser <strong>elástico</strong> pues debe atender a un numero indefinido de sistemas y aplicaciones generando logs.</li>
+<li>Flexibilidad en el análisis de los logs: poder cambiar el servicio de análisis en ejecución.</li>
+<li>Capacidad de añadir, modificar o eliminar herramientas de análisis, sin tener que hacer crecer la aplicación original indefinidamente. Bastará con agregar, modificar o eliminar servidores.</li>
+<li>Intentar mejorar el rendimiento introduciendo paralelismo.</li>
+<li>Las ventajas de los sistemas distribuidos vistos anteriormente cuando describiamos el subsistema <em>Log processer</em> aplican de igual forma aquí.</li>
+</ul>
+<p>Las <strong>consecuencias</strong> y <strong>responsabilidades</strong> son las mismas que al aplicar el mismo patrón <em>Broker</em> en el subsistema <em>Log Processer</em>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="estructura-de-la-solucion">
+<h1><a class="toc-backref" href="#id11">Estructura de la solución</a></h1>
+<p>El sistema se estructura en dos subsistemas: <em>Log Processer</em> y <em>Log Analyzer</em>.</p>
+<p>La fase de procesado de logs expone una interfaz para cada tipo de fuente de logs, convierte los logs de distintas fuentes a un formato unificado, eliminando datos superfluos. Guarda los logs procesados (en base de datos) para su posterior análisis; La fase de análisis obtiene, cada minuto, de la capa de persistencia bloques de logs y los analiza, lanzando una alarma si de su análisis se prevé un mal funcionamiento en el sistema monitorizado.</p>
+<p>A continuación se describirán ambos subsistemas relacionándolos con los elementos de los patrones arquitectónicos presentes en el diseño.</p>
+<div class="section" id="log-processer">
+<h2><a class="toc-backref" href="#id12"><em>Log Processer</em></a></h2>
+<dl class="docutils">
+<dt>Diagramas:</dt>
+<dd><ul class="first last simple">
+<li>Ver el <a class="reference internal" href="#diagrama-de-componentes-log-processer">Diagrama de Componentes - Log Processer</a>.</li>
+<li>Ver el <a class="reference internal" href="#diagrama-de-artefactos-log-processer">Diagrama de Artefactos - Log Processer</a>.</li>
+</ul>
+</dd>
+</dl>
+<p>Presenta una arquitectura gobernada por el patrón <em>Broker</em>, y está compuesto por los siguientes elementos:</p>
+<ul class="simple">
+<li>Componente <em>Application Log Receptor</em>: representa los elementos <em>Cliente</em> y <em>Proxy de Cliente</em> de patrón <em>Broker</em>. Expone una interfaz para recibir por HTTP los logs de las aplicaciones del sistema monitorizado. Consume la interfaz del componente <em>Log Processer Broker</em> encolando los logs recibidos al servicio de procesado de logs.</li>
+<li>Componente <em>System Log Receptor</em>: análogamente representa los elementos <em>Cliente</em> y <em>Proxy de Cliente</em> de patrón <em>Broker</em>. Exponiendo una interfaz para recibir por HTTP los logs de los elementos sistema.</li>
+<li>Componente <em>Log Processer Broker</em>: representa el elemento <em>Broker</em> del patrón. Expone las interfaces para los clientes y el registro de los servidores. Como particularidad de esta solución, los clientes no esperan la respuesta de los servidores, por lo tanto este <em>broker</em> no necesita implementar la interfaz del camino de vuelta de los mensajes.</li>
+<li>Servicio <em>Log Processer</em>: representa la parte <em>Servidor</em> y <em>Proxy de Servidor</em> del patrón Broker. Consume la interfaz de registro de servidores del <em>broker</em>. El servicio está formado por varios componentes organizados por un patrón <em>Layers</em> que aporta flexibilidad al servicio de procesado de logs.</li>
+<li>Componente <em>App Log Parser</em>: parte del servicio <em>Log Processer</em>, representa parte de la capa <em>Parser</em> del patrón <em>Layers</em>. Se encarga de la recepción y separación de los campos timestamp, componente, severidad, texto del log.</li>
+<li>Componente <em>System Log Parser</em>: Es análogo al anterior, es parte del servicio <em>Log Processer</em>, representa parte de la capa <em>Parser</em> del patrón <em>Layers</em>. Se encarga de la recepción y separación de los campos timestamp, componente, severidad, texto del log y mapear la severidad de un entero a las cadenas 1-&gt;ERROR, 2-&gt;WARN, 3-&gt;INFO, 4-&gt;DEBUG.</li>
+<li>Componente <em>Log Body Processer</em>: parte del servicio <em>Log Processer</em>, representa parte de la capa <em>Body Processer</em>. Es llamado por los componente de la capa <em>Parser</em> y se encarga de separar el texto del log en las diferentes palabras que lo componen. Al terminar llama al componente <em>Noisy Words Filter</em>.</li>
+<li>Componente <em>Noisy Words Filter</em>: parte del servicio <em>Log Processer</em>, representa parte de la capa <em>Body Processer</em>. Se encarga de eliminar todas las palabras de 3 o menos caracteres al objeto de facilitar la indexación. Consume la interfaz de la siguiente capa <em>Persistant Adapter Layer</em>.</li>
+<li>Componente <em>Log Recorder</em>: parte del servicio <em>Log Processer</em>, representa parte de la capa <em>Persistant Adapter Layer</em>. Hace persistir los logs en el formato unificado en una base de datos.</li>
+<li>Estructura de datos: El formato unificado será un documento <em>json</em> con la siguiente estructura:</li>
+</ul>
+<pre class="code json literal-block">
+<span class="punctuation">{</span>
+ <span class="error">'timestamp':</span> <span class="error">timestamp,</span>
+ <span class="error">'componente':</span> <span class="error">comp,</span>
+ <span class="error">'severity':</span> <span class="error">sever,</span>
+ <span class="error">'body':</span> <span class="error">[text]</span>
+<span class="punctuation">}</span>
+</pre>
+<div class="section" id="vista-logica-del-subsistema-log-processer">
+<h3><a class="toc-backref" href="#id13">Vista lógica  del subsistema <em>Log Processer</em>.</a></h3>
+<div class="figure">
+<img alt="vistas/Dia-Componentest-Log-Processer_v1.png" id="diagrama-de-componentes-log-processer" src="vistas/Dia-Componentest-Log-Processer_v1.png" style="width: 582.0px; height: 1627.0px;" />
+<p class="caption">Diagrama de Componentes</p>
+</div>
+</div>
+<div class="section" id="vista-de-despliegue-del-subsistema-log-processer">
+<h3><a class="toc-backref" href="#id14">Vista de despliegue del subsistema <em>Log Processer</em>.</a></h3>
+<div class="figure">
+<img alt="vistas/Dia-Artefactos-Log-Processer_v1.png" id="diagrama-de-artefactos-log-processer" src="vistas/Dia-Artefactos-Log-Processer_v1.png" style="width: 1261.0px; height: 266.0px;" />
+<p class="caption">Diagrama de Artefactos</p>
+</div>
+</div>
+</div>
+<div class="section" id="log-analyzer">
+<h2><a class="toc-backref" href="#id15"><em>Log Analyzer</em></a></h2>
+<p>Diagramas:</p>
+<ul class="simple">
+<li>Ver el <a class="reference internal" href="#diagrama-de-componentes-log-analyzer">Diagrama de Componentes - Log Analyzer</a>.</li>
+<li>Ver el <a class="reference internal" href="#diagrama-de-artefactos-log-analyzer">Diagrama de Artefactos - Log Analyzer</a>.</li>
+</ul>
+<p>Presenta una estructura dirigida por el patrón arquitectónico <em>Blackboard</em> combinado con el patrón <em>Broker</em> para dotar a los analizadores de las ventajas de los sistemas distribuidos. Está compuesto por los siguientes elementos:</p>
+<ul class="simple">
+<li>Componente <em>Control</em>: representa el elemento <em>Control</em> de patrón <em>Blackboard</em>. Se comunica con la pizarra y el representante de los analizadores que ya veremos más adelante. Tiene las responsabilidad de tomar la decisión sobre cuándo hay que comenzar a analizar nuevos logs, elegir los analizadores que entrarán en juego e interpretar las respuestas de los analizadores para tomar la decisión de si el sistema está entrando en mal funcionamiento o no.</li>
+<li>Componente <em>Blackboard</em>: representa el elemento <em>Blackboard</em> de patrón <em>Blackboard</em>. Se trata de un componente que ofrece un espacio de comunicación común entre el resto de elementos de subsistema.</li>
+<li>Componente <em>Analyzer Tool Scheduler</em>: Es una adaptación del elemento <em>Algorithm</em> de patrón <em>Blackboard</em>. Aúna la comunicación que los Analizadores que son los verdaderos representantes de los elementos <em>Algorithm</em> del patrón, haciendo las veces de Proxy. Los analizadores se organizan con un patrón <em>Broker</em> del que el <em>Analyzer Tool Scheduler</em> hace también las veces de los elementos <em>Cliente</em> y <em>Proxy de Cliente</em> del sistema distribuido <em>Broker</em>. Se encarga por tanto de recibir las indicaciones de componente <em>Control</em>, encolar las peticiones a los analizadores a través del <em>Analysis Tool Broker</em> y recibir los resultados de los análisis de forma asíncrona propiciando el paralelismo, y de escribir estos resultados convenientemente en el componente <em>Blackboard</em>.</li>
+<li>Componente <em>Analysis Tool Broker</em>: representa el elemento <em>Broker</em> del patrón. Expone las interfaces para los clientes y el registro de los servidores. Trabajará de forma asíncrona por lo que ofrece interfaces de doble sentido a servidores y clientes.</li>
+<li>Componentes <em>Log Comparer Server</em>, <em>Language Processer Server</em> y  <em>Machine Learning Server</em>: representan los elementos <em>Servidor</em> y <em>Proxy de Servidor</em> del patrón <em>Broker</em>. Consumen la interfaz de registro de servidores del <em>broker</em>. Reciben paquetes de logs para analizar y devuelven resultados a través del <em>Analysis Tool Broker</em>. La especificación interna de los analizadores está fuera del objetivo de esta descripción arquitectónica. Todos los analizadores pueden trabajar en paralelo y en diferentes máquinas. Mejorando el rendimiento y aportando elasticidad.</li>
+</ul>
+<div class="section" id="vista-logica-del-subsistema-log-analyzer">
+<h3><a class="toc-backref" href="#id16">Vista lógica  del subsistema <em>Log Analyzer</em>.</a></h3>
+<div class="figure">
+<img alt="vistas/Dia-Componentest-Log-Analyzer_v1.png" id="diagrama-de-componentes-log-analyzer" src="vistas/Dia-Componentest-Log-Analyzer_v1.png" style="width: 808.0px; height: 1375.0px;" />
+<p class="caption">Diagrama de Componentes</p>
+</div>
+</div>
+<div class="section" id="vista-de-despliegue-del-subsistema-log-analyzer">
+<h3><a class="toc-backref" href="#id17">Vista de despliegue del subsistema <em>Log Analyzer</em>.</a></h3>
+<div class="figure">
+<img alt="vistas/Dia-Artefactos-Log-Analyzer_v1.png" id="diagrama-de-artefactos-log-analyzer" src="vistas/Dia-Artefactos-Log-Analyzer_v1.png" style="width: 1444.0px; height: 266.0px;" />
+<p class="caption">Diagrama de Artefactos</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="comportamiento-dinamico-de-la-solucion">
+<h1><a class="toc-backref" href="#id18">Comportamiento Dinámico de la solución</a></h1>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id19"><em>Log Processer</em></a></h2>
+<p>Ver el <a class="reference internal" href="#diagrama-de-secuencia-log-processer-system-logs">Diagrama de Secuencia - Log Processer - system logs</a> y <a class="reference internal" href="#diagrama-de-secuencia-log-processer-application-logs">Diagrama de Secuencia - Log Processer - Application logs</a>.</p>
+<div class="section" id="vista-de-procesos-del-subsistema-log-processer-sistemas">
+<h3><a class="toc-backref" href="#id20">Vista de procesos del subsistema <em>Log Processer</em>. Sistemas</a></h3>
+<div class="figure">
+<img alt="vistas/Dia-Secuencia-Log-Processer_System_v1.png" id="diagrama-de-secuencia-log-processer-system-logs" src="vistas/Dia-Secuencia-Log-Processer_System_v1.png" style="width: 1005.0px; height: 997.0px;" />
+<p class="caption">Diagrama de Secuencia para logs de sistema</p>
+</div>
+</div>
+<div class="section" id="vista-de-procesos-del-subsistema-log-processer-aplicaciones">
+<h3><a class="toc-backref" href="#id21">Vista de procesos del subsistema <em>Log Processer</em>. Aplicaciones</a></h3>
+<div class="figure">
+<img alt="vistas/Dia-Secuencia-Log-Processer_App_v1.png" id="diagrama-de-secuencia-log-processer-application-logs" src="vistas/Dia-Secuencia-Log-Processer_App_v1.png" style="width: 1055.0px; height: 914.0px;" />
+<p class="caption">Diagrama de Secuencia para logs de aplicación</p>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id22"><em>Log Analyzer</em></a></h2>
+<div class="section" id="vista-de-procesos-del-subsistema-log-analyzer">
+<h3><a class="toc-backref" href="#id23">Vista de procesos del subsistema <em>Log Analyzer</em>.</a></h3>
+<div class="figure">
+<img alt="vistas/Dia-Secuencia-Log-Analyzer_v1.png" id="diagrama-de-secuencia-log-analyzer" src="vistas/Dia-Secuencia-Log-Analyzer_v1.png" style="width: 1003.0px; height: 1255.0px;" />
+<p class="caption">Diagrama de Secuencia.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

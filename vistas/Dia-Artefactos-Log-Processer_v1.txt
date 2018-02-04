@@ -1,0 +1,28 @@
+@startuml
+skinparam monochrome true
+skinparam componentStyle uml2
+
+rectangle "Log Processer" <<subsystem>>{
+
+  artifact "application-log-receptor.jar" as AALR
+  artifact "system-log-receptor.jar" as ASLR
+  artifact "RabitMQ\nLog Processer" as ARLP
+  artifact "log-processer-server.java" as  ALPS
+}
+component "Application Log Receptor" as CALR
+AALR ..> CALR: manifest
+
+component "System Log Receptor" as CSLR
+ASLR ..> CSLR: manifest
+
+component "Broker Log Processer" as CBLP
+ARLP ..> CBLP: manifest
+
+component "App Log Parser" as CALP
+component "System Log Parser" as CSLP
+component "Noisy Words Filter" as CNWF
+ALPS ..> CALP: manifest
+ALPS ..> CSLP: manifest
+ALPS ..> CNWF: manifest
+
+@enduml

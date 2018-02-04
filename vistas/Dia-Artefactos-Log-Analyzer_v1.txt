@@ -1,0 +1,32 @@
+@startuml
+skinparam monochrome true
+skinparam componentStyle uml2
+
+rectangle "Log Analyzer" <<subsystem>> as LANA{
+  artifact "log-analyzer.jar" as ALA
+  artifact "RabbitMQ\nLog Analyzer" as  ARLA
+  artifact "log-comparer-server.jar" as ALCS
+  artifact "language-processer-server.jar" as ALPS
+  artifact "machine-learning-server" as AMLS
+}
+
+component "Control" as CC
+component "Blackboard" as CB
+component "Analyzer Tool Scheduler" as CATS
+
+ALA ..> CC: manifests
+ALA ..> CB: manifests
+ALA ..> CATS: manifests
+
+component "Analysis Tool Broker" as CATB
+ARLA ..> CATB: manifests
+
+component "Log Comparer Server" as CLCS
+ALCS ..> CLCS: manifests
+
+component "Language Processer Server" as CLPS
+ALPS ..> CLPS: manifests
+
+component "Machine Learning Server" as CMLS
+AMLS ..> CMLS: manifests
+@enduml

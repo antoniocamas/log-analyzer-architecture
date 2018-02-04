@@ -1,0 +1,23 @@
+@startuml
+skinparam monochrome true
+skinparam componentStyle uml2
+
+|External\nSystem|
+start
+:sends log;
+|#AntiqueWhite|system-log-receptor.jar|
+:receives log;
+:queues log in broker\nindicating kind of log;
+|RabbitMQ\nLog Processer|
+:receives request;
+:forward request to server;
+|log-processer-server.jar|
+:SystemParser receives log;
+:Splits the fields:\n timestamp,\n component,\n severity,\n body;
+:Translates the severity\nto common format;
+:Splits words of the body;
+:Filters the words smaller than 3 letters;
+|MongoDB|
+:Stores the processed\nlog in json format;
+stop
+@enduml

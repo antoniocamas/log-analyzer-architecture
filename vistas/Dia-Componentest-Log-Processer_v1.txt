@@ -1,0 +1,65 @@
+@startuml
+skinparam monochrome true
+skinparam componentStyle uml2
+
+rectangle "External Application" <<log producer>> as EXA
+rectangle "External System" <<log producer>> as EXS
+
+
+rectangle "Log Processer" <<subsystem>>{
+
+  rectangle "Broker Arquitectural Squeme" <<distributed>> {
+
+    component "System Log Receptor" as SLR
+    interface "System Log Interface\nHTTP REST" as SLI
+    SLR -up- SLI
+    EXS --( SLI
+
+    component "Application Log Receptor" as ALR
+    interface "Application Log Interface\nHTTP REST" as ALI
+    ALR -up- ALI
+    EXA -do-( ALI
+
+    component "Log Processer Broker" as LPB
+    interface "Log Processer Broker Client Interface" as BCI
+    interface "Log Processer Broker Server Interface" as BSI
+    LPB -up- BCI
+    LPB -do- BSI
+
+    ALR --( BCI
+    SLR --( BCI
+
+    rectangle "Layers Arquitectural Squeme" <<Services>> {
+      
+      folder "Parser Layer" {
+        component "System Log parser" as SLP
+        SLP -up-( BSI
+        component "App Log parser" as ALP
+        ALP -up-( BSI
+     
+        
+     }
+
+     folder "Body Processer Layer" {
+       component "Log Body Splitter" as LBS
+       component "Noisy Words Filter" as NWF
+     }
+
+     interface "Json Log Interface L2" as JLIL2
+     LBS -up- JLIL2
+     NWF -up- JLIL2
+     SLP --( JLIL2
+     ALP --( JLIL2
+     LBS -ri-> NWF
+     
+    }
+   
+    folder "Persistant Adapter Layer" {
+      component "Log Recorder" as LRC
+    }
+    
+    interface "Json Log Interface L3" as JLIL3
+    LRC -up- JLIL3
+    NWF -do-( JLIL3
+ }
+}

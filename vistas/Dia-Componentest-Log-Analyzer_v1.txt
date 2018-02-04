@@ -1,0 +1,58 @@
+@startuml
+skinparam monochrome true
+skinparam componentStyle uml2
+
+rectangle "Log Processer" <<subsystem>> as LPSYS
+
+database "Log Storage\ndatabase" as LST
+note "{'timestamp': timestamp,\n'componente': comp,\n'severity': sever,\n'body': text\n}" as N1
+
+N1 ..> LST
+LPSYS -do-> LST
+
+rectangle "Log Analyzer" <<subsystem>> as LANA{
+  rectangle "Blackboard Arquitectural Squeme" {
+    component "Blackboard" as BBD
+    interface "Blackboard Interface" as BBI
+    BBD -do- BBI
+
+    component "Analyzer Tool Scheduler" as ATS
+    interface "ATScheduler Control Interface" as ATSCI
+    ATS - ATSCI
+    ATS -up-( BBI
+    
+   
+    component "Control" as CTR
+    CTR -up-> LST
+    CTR --( BBI
+    CTR --( ATSCI
+
+ note "{\n  logsToAnalyze:[\n   {\n    'timestamp': timestamp1,\n    'componente': comp1,\n    'severity': sever1,\n    'body': text1\n    },\n     . . . \n   {\n    'timestamp': timestampN,\n    'componente': compN,\n    'severity': severN,\n    'body': textN\n    },\n  ],\n'Analyzer': AnalyzerToCall}" as N2
+  
+  }
+
+  rectangle "Broker Arquitectural Squeme" <<distributed>> {
+
+
+    component "Analysis Tool Broker" as ATB
+    interface "Broker-Client Birectional Interfaces" as ATBCI
+    interface "Broker-Server Birectional Interfaces" as ATBSI
+    ATB -up-( ATBCI
+    ATB -do-( ATBSI
+   
+    N2 ..> ATBCI
+    
+    ATS -do-( ATBCI
+
+    component "Log Comparer Server" <<analyzer>> as LCS
+    LCS -up-( ATBSI
+
+    component "Language Processer Server" <<analyzer>> as LPS
+    LPS -up-( ATBSI
+
+    component "Machine Learning Server" <<analyzer>> as MLS
+    MLS -up-( ATBSI
+
+  }
+}
+@enduml

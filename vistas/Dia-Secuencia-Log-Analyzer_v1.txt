@@ -1,0 +1,43 @@
+@startuml
+skinparam monochrome true
+skinparam componentStyle uml2
+
+|log-analyzer.jar|
+start
+:1 minutes since last\nlogs pull;
+|MongoDB|
+:pull all not already\nprocessed logs;
+|log-analyzer.jar|
+:copies logs in "blackboard";
+:"Control" activates\nAnalyzer N;
+:"Scheduler" sends request with logs;
+split
+|log-analyzer.jar|
+: Activates the rest\n of the analyzers;
+
+split again
+
+|RabbitMQ\nLog Analyzer|
+:receives request;
+:forward request to server;
+|machine-learning-server.jar or\nlog-comparer-server.jar or\nlanguage-processer-server.jar|
+:Analyze;
+:return Results including\nQuality of response;
+|RabbitMQ\nLog Analyzer|
+:receives result;
+:forward result to "Scheduler;
+
+
+endsplit
+|log-analyzer.jar|
+:"Scheduler" asynchronously\nrecives analyzer results;
+:"Scheduler writes them\nin the "blackboard";
+:"Control evaluates results\nReading them from the "blackboard";
+if (system instable?) then (yes)
+:Send Alert;
+
+endif
+:wait for the next minute;
+
+stop
+@enduml
